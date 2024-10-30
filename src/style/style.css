@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+body > main {
+    background-color: #fc1e8a;
+    user-select: none;/* Controla se o usuario consegue fazer seleções*/
+}
+/* TODO Seletor: Container do jogo: flex, column, centralizado(x,y), gap, background(gradient:Ferramenta: Css gradrient.io generator (diagonal, #03001e, #7303c0, #ec38bc, #fdeff9)), padding,  */
+
+/* TODO Seletor: Titulo do jogo: font-size, color contraste,uppercase, letter spacing */
+
+/* TODO Seletor: botão de reset: color contraste, padding, width,background color, nenhuma borda, font-size, font-weight letter spacing, uppercase, cursor; seletor: focus: color, background color escura*/
+
+/* TODO Seletor: Tela do jogo: width/height 430px, border solida, display flex, wrap, gap, transform-style?3d?, perspective: 500xp?  */
+
+/* TODO Seletor: carta do jogo: position relative, width/height 100px, display flex, centralizado, branca, font-size, transform rotate Y 180, transition 0.25s  */
+
+/* TODO Seletor: carta do jogo after: content vazio, position absolute, inset 0?, background #404040, transition 0.25, transform rotate Y 0, back face hidden? */
