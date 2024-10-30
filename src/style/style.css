@@ -1,18 +1,84 @@
 *{
     box-sizing: border-box;
 }
+
 body > main {
     background-color: #fc1e8a;
     user-select: none;/* Controla se o usuario consegue fazer seleções*/
 }
 /* TODO Seletor: Container do jogo: flex, column, centralizado(x,y), gap, background(gradient:Ferramenta: Css gradrient.io generator (diagonal, #03001e, #7303c0, #ec38bc, #fdeff9)), padding,  */
 
+.game {
+    background: linear-gradient( 345deg,
+    #2e709e 30%,
+    #8d4262 70%,
+    #65242d
+        );
+    min-width: 450px;
+    min-height: 500px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
 /* TODO Seletor: Titulo do jogo: font-size, color contraste,uppercase, letter spacing */
+.game h2 {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
 
 /* TODO Seletor: botão de reset: color contraste, padding, width,background color, nenhuma borda, font-size, font-weight letter spacing, uppercase, cursor; seletor: focus: color, background color escura*/
 
-/* TODO Seletor: Tela do jogo: width/height 430px, border solida, display flex, wrap, gap, transform-style?3d?, perspective: 500xp?  */
+/* TODO Seletor: Tela do jogo: width/height 430px, display flex, wrap, gap, transform-style?3d?, perspective: 500xp?  */
+
+.tela {
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    background-color: #ffffff22;
+}
 
 /* TODO Seletor: carta do jogo: position relative, width/height 100px, display flex, centralizado, branca, font-size, transform rotate Y 180, transition 0.25s  */
 
+.card {
+    position: relative;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 2em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
 /* TODO Seletor: carta do jogo after: content vazio, position absolute, inset 0?, background #404040, transition 0.25, transform rotate Y 0, back face hidden? */
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.card.cardOpen, .card.cardMatched  {
+    transform: rotateY(0deg);
+}
+
+
+.card.cardOpen::after  {
+    transform: rotateY(180deg);
+}
