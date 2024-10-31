@@ -1,19 +1,17 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap");
+
+* {
     box-sizing: border-box;
 }
 
 body > main {
     background-color: #fc1e8a;
-    user-select: none;/* Controla se o usuario consegue fazer seleções*/
+    user-select: none; /* Controla se o usuario consegue fazer seleções*/
 }
 /* TODO Seletor: Container do jogo: flex, column, centralizado(x,y), gap, background(gradient:Ferramenta: Css gradrient.io generator (diagonal, #03001e, #7303c0, #ec38bc, #fdeff9)), padding,  */
 
 .game {
-    background: linear-gradient( 345deg,
-    #2e709e 30%,
-    #8d4262 70%,
-    #65242d
-        );
+    background: linear-gradient(345deg, #7303c0 30%, #8d4262 70%, #65242d);
     min-width: 450px;
     min-height: 500px;
     width: 50%;
@@ -38,12 +36,12 @@ body > main {
 
 /* TODO Seletor: Tela do jogo: width/height 430px, display flex, wrap, gap, transform-style?3d?, perspective: 500xp?  */
 
-.tela {
+#tela {
     width: 430px;
     height: 430px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 4px;
     transform-style: preserve-3d;
     perspective: 500px;
     background-color: #ffffff22;
@@ -52,33 +50,47 @@ body > main {
 /* TODO Seletor: carta do jogo: position relative, width/height 100px, display flex, centralizado, branca, font-size, transform rotate Y 180, transition 0.25s  */
 
 .card {
+    font-family: "Noto Color Emoji", serif;
     position: relative;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    font-size: 2em;
+    font-size: 2.5rem;
     transform: rotateY(180deg);
-    transition: 0.25s;
+    transition: transform 0.25s, color 0.5s;
 }
 
 /* TODO Seletor: carta do jogo after: content vazio, position absolute, inset 0?, background #404040, transition 0.25, transform rotate Y 0, back face hidden? */
 .card::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background-color: #404040;
-    transition: 0.25s;
+    transition: transform 0.25s;
     transform: rotateY(0deg);
+}
+
+.card.cardOpen,
+.card.cardMatched {
+    transform: rotateY(0deg);
+}
+
+.card.cardMatched {
+    background-color: green;
+}
+
+.card.cardOpen::after,
+.card.cardMatched::after {
+    transform: rotateY(180deg);
     backface-visibility: hidden;
 }
-
-.card.cardOpen, .card.cardMatched  {
-    transform: rotateY(0deg);
-}
-
-
-.card.cardOpen::after  {
-    transform: rotateY(180deg);
+.vitoria {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3.2rem;
+    font-family: cursive;
 }

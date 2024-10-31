@@ -4,8 +4,6 @@ body {
     background-color: #000;
     height: 100vh;
     color: #ffffff;
-    font-size: 1.4rem;
-    font-family: cursive;
 }
 body > header {
     display: flex;
@@ -21,6 +19,7 @@ body > header {
     padding: 0 20px;
     height: 3em;
     flex-shrink: 0;
+    font-size: 1rem;
 }
 body > header h1 {
     display: inline-block;
